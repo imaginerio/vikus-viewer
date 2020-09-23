@@ -15,11 +15,11 @@
       },
       "detail": {
         "size": 1024,
-        "url": "https://imaginerio.github.io/vikus-viewer/data/images/sprites/spritesheet.json/data/images/1024/"
+        "url": "https://imaginerio.github.io/vikus-viewer/data/images/1024/"
       },
       "big": {
         "size": 4096,
-        "url": "https://imaginerio.github.io/vikus-viewer/data/images/sprites/spritesheet.json/data/images/4096/"
+        "url": "https://imaginerio.github.io/vikus-viewer/data/images/4096/"
       }
     }
   },
