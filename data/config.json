@@ -6,7 +6,7 @@
   "loader": {
     "info": "https://imaginerio.github.io/vikus-viewer/data/info.md",
     "timeline": "https://imaginerio.github.io/vikus-viewer/data/timeline.csv",
-    "items": "https://raw.githubusercontent.com/imaginerio/situated-views/dev/src/data-out/import-vikus.csv",
+    "items": "./data/data.csv",
     "tsne": "./data/tsne.csv",
     "textures": {
       "medium": {
