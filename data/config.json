@@ -81,9 +81,9 @@
       },
       {
         "name": "Creator",
-        "source": "_keywords",
+        "source": "_creator",
         "display": "column",
-        "type": "array"
+        "type": "text"
       }
     ]
   }
