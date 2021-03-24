@@ -18,8 +18,8 @@
         "url": "./data/images/1024/"
       },
       "big": {
-        "size": 4096,
-        "url": "./data/images/4096/"
+        "size": 4000,
+        "url": "./data/images/4000/"
       }
     }
   },
