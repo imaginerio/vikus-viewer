@@ -1,4 +1,4 @@
-mapboxgl.accessToken = ''
+mapboxgl.accessToken = 'pk.eyJ1IjoidGVjaG5vbG9naWVzdGlmdHVuZyIsImEiOiJja2EyODNzenQwMHB0M2xsazd1dXZtOW5tIn0.GxXlHFEWUj_zfgnPAjpX3g'
 
 function Mapbox() {
   var state = {
@@ -20,6 +20,7 @@ function Mapbox() {
     })
 
     validData = data.filter((d) => !isNaN(d.lat) && !isNaN(d.lng))
+    validData = validData.filter((d) => !d.lat == 0 && !d.lng == 0)
 
     var extent = [
       d3.extent(validData, function (d) {
@@ -34,11 +35,12 @@ function Mapbox() {
       [extent[0][0], extent[1][0]],
       [extent[0][1], extent[1][1]],
     ]
+
     console.log(bounds, bounds)
 
     map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/light-v9',
       bounds: bounds,
       fitBoundsOptions: { padding: 100 },
       // causes pan & zoom handlers not to be applied, similar to
@@ -50,6 +52,18 @@ function Mapbox() {
 
     map.on('load', function () {
       console.log('load')
+      var geojsonUrl = '/data/rj.geojson';
+      map.addSource('rj', { type: 'geojson', data: geojsonUrl });
+      map.addLayer({
+          'id': 'rj',
+          'type': 'line',
+          'source': 'rj',
+          'layout': {},
+          'paint': {
+              'line-color': '#ED6B4C',
+              'line-width': 3
+          }
+      });
       mapbox.project()
     })
     // map.on('resize', function () {
@@ -59,7 +73,7 @@ function Mapbox() {
 
   mapbox.project = function () {
     console.log('projekt')
-    map.fitBounds(bounds, { padding: 100, linaer: true, animate: false })
+    map.fitBounds(bounds, { padding: 100, linear: true, animate: false })
 
     var projected = validData.map((d) => {
       var point = map.project([d.lng, d.lat])

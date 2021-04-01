@@ -1,0 +1,90 @@
+{
+  "project": {
+    "name": "imagineRio (vikus-viewer)",
+    "quality": 1
+  },
+  "loader": {
+    "info": "https://imaginerio.github.io/vikus-viewer/data/info.md",
+    "timeline": "https://imaginerio.github.io/vikus-viewer/data/timeline.csv",
+    "items": "data/data.csv",
+    "tsne": "data/tsne.csv",
+    "textures": {
+      "medium": {
+        "size": 256,
+        "url": "data/images/sprites/spritesheet.json"
+      },
+      "detail": {
+        "size": 1024,
+        "url": "data/images/1024/"
+      },
+      "big": {
+        "size": 4000,
+        "url": "data/images/4000/"
+      }
+    }
+  },
+  "style": {
+    "fontColor": "#2d3b43",
+    "fontColorActive": "#eae2cb",
+    "fontBackground": "#295b71",
+    "textShadow": "1px 1px 0px #f8f4e9",
+    "canvasBackground": "#f1f1f1",
+    "timelineBackground": "#fff9eb",
+    "timelineFontColor": "#000",
+    "backgroundHeader": "#035151",
+    "fontColorHeader": "#f8774f",
+    "detailBackground": "#EEE",
+    "infoBackground": "#032a74",
+    "infoFontColor": "#fff",
+    "searchbarBackground": "#295b71"
+  },
+  "projection": {
+    "columns": 6
+  },
+  "detail": {
+    "structure": [
+      {
+        "name": "Id",
+        "source": "_id",
+        "display": "column",
+        "type": "text"
+      },
+      {
+        "name": "Title",
+        "source": "_title",
+        "display": "column",
+        "type": "text"
+      },
+      {
+        "name": "Description",
+        "source": "_description",
+        "display": "column",
+        "type": "text"
+      },
+      {
+        "name": "Date",
+        "source": "_year",
+        "display": "column",
+        "type": "text"
+      },
+      {
+        "name": "Material",
+        "source": "_material",
+        "display": "column",
+        "type": "text"
+      },
+      {
+        "name": "Dimensions",
+        "source": "column._width + ' x ' + column._height",
+        "display": "column",
+        "type": "function"
+      },
+      {
+        "name": "Creator",
+        "source": "_creator",
+        "display": "column",
+        "type": "text"
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@ function Timeline() {
   var fontScaleYear = d3.scale
     .linear()
     .domain([1, 9])
-    .range([9, 20])
+    .range([5, 20])
     .clamp(true);
 
   var timelineFontScale = d3.scale
