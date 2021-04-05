@@ -52,7 +52,7 @@ function Mapbox() {
 
     map.on('load', function () {
       console.log('load')
-      var geojsonUrl = '/data/rj.geojson';
+      var geojsonUrl = 'data/rj.geojson';
       map.addSource('rj', { type: 'geojson', data: geojsonUrl });
       map.addLayer({
           'id': 'rj',
